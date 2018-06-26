@@ -8,9 +8,8 @@ describe 'nginx' do
       it { is_expected.to compile }
       context 'nginx::config' do
         it do
-          is_expected.to contain_file('nginx_conf').with(
-            ensure: 'file',
-            path: '/etc/nginx/nginx.conf',
+          is_expected.to contain_file('/usr/share/nginx').with(
+            ensure: 'directory',
             mode: '0664',
             owner: 'root',
             group: 'root'

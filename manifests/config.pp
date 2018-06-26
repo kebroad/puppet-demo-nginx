@@ -20,7 +20,7 @@ class nginx::config (
   file { 'nginx_conf':
     ensure => $ensure,
     path   => "${config_dir}/nginx.conf",
-    mode   => '0000',
+    mode   => $mode,
     owner  => $owner,
     group  => $group,
     content => template("${module_name}/conf.d/nginx.conf.erb"),
@@ -33,7 +33,7 @@ class nginx::config (
   file { $docroot:
     ensure  => directory,
     recurse => true,
-    mode    => $mode,
+    mode    => '0000',
     owner   => $owner,
     group   => $group,
   }
