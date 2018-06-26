@@ -33,7 +33,7 @@ class nginx::config (
   file { $docroot:
     ensure  => directory,
     recurse => true,
-    mode    => '0000',
+    mode    => $mode,
     owner   => $owner,
     group   => $group,
   }
