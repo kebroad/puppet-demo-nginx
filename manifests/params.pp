@@ -18,7 +18,7 @@ class nginx::params {
 
   $config_vdir_enable = $facts['os']['family'] ? {
     'Debian' => $config_dir,
-    default  => undef,
+    default  => $config_dir,
   }
 
   $config_process_user = $facts['os']['family'] ? {
