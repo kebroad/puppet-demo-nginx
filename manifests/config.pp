@@ -20,7 +20,7 @@ class nginx::config (
   file { 'nginx_conf':
     ensure => $ensure,
     path   => "${config_dir}/nginx.conf",
-    mode   => '0755',
+    mode   => '0000',
     owner  => $owner,
     group  => $group,
     content => template("${module_name}/conf.d/nginx.conf.erb"),
